@@ -9,7 +9,7 @@ namespace VendorOrderTracker.Tests
   {
     public void Dispose()
     {
-      //
+      Vendor.ClearAll();
     }
 
     [TestMethod]
