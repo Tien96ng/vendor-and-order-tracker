@@ -1,5 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Tests
@@ -42,5 +43,14 @@ namespace VendorOrderTracker.Tests
       Assert.AreEqual(1, newVendor1.Id);
     }
 
+    [TestMethod]
+    public void GetAll__ReturnAllObjectsInList_List()
+    {
+      Vendor pepsi = new Vendor("pepsi", "Sode product seller");
+      Vendor apple = new Vendor("apple", "Technology enterprise");
+
+      List<Vendor> result = new List<Vendor> { pepsi, apple };
+      CollectionAssert.AreEqual(result, Vendor.GetAll());
+    }
   }
 }
