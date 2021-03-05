@@ -38,8 +38,8 @@ namespace VendorOrderTracker.Tests
     [TestMethod]
     public void GetId_ReturnsId_Int()
     {
-      Vendor newVendor = new Vendor("pepsi", "Soda Product seller");
-      Assert.AreEqual(1, newVendor.Id);
+      Vendor newVendor1 = new Vendor("pepsi", "Soda Product seller");
+      Assert.AreEqual(1, newVendor1.Id);
     }
   }
 }
