@@ -41,5 +41,6 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor1 = new Vendor("pepsi", "Soda Product seller");
       Assert.AreEqual(1, newVendor1.Id);
     }
+
   }
 }
