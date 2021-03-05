@@ -27,5 +27,19 @@ namespace VendorOrderTracker.Tests
       Vendor newVendor = new Vendor("pepsi", "Soda Product seller");
       Assert.AreEqual("pepsi", newVendor.Name);
     }
+
+    [TestMethod]
+    public void GetDescription_ReturnsDescription_String()
+    {
+      Vendor newVendor = new Vendor("pepsi", "Soda Product seller");
+      Assert.AreEqual("Soda Product seller", newVendor.Description);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      Vendor newVendor = new Vendor("pepsi", "Soda Product seller");
+      Assert.AreEqual(1, newVendor.Id);
+    }
   }
 }
