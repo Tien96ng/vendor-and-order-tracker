@@ -33,5 +33,18 @@ namespace VendorOrderTracker.Models
     {
       return _instances[id - 1];
     }
+
+    public static void Delete(int id)
+    {
+      int newId = 1;
+      foreach(Vendor vendor in _instances)
+      {
+        if(vendor.Id != id)
+        {
+          vendor.Id = newId;
+        }
+        newId++;
+      }
+    }
   }
 }
