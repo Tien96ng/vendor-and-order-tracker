@@ -62,5 +62,16 @@ namespace VendorOrderTracker.Tests
 
       Assert.AreEqual(apple, result);
     }
+
+    [TestMethod]
+    public void Delete_RemovesSpecificObjectInList_List()
+    {
+      Vendor burgerKing = new Vendor("burger king", "Fast Food");
+      Vendor mcdonald = new Vendor("mcdonald", "Fast Food");
+      Vendor.Delete(1);
+      List<Vendor> fastFoodList = Vendor.GetAll();
+
+      Assert.AreEqual(mcdonald, fastFoodList[0]);
+    }
   }
 }
