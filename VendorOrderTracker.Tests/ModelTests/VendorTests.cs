@@ -52,5 +52,15 @@ namespace VendorOrderTracker.Tests
       List<Vendor> result = new List<Vendor> { pepsi, apple };
       CollectionAssert.AreEqual(result, Vendor.GetAll());
     }
+
+    [TestMethod]
+    public void Find_ReturnSpecificObjectInList_List()
+    {
+      Vendor pepsi = new Vendor("pepsi", "Sode product seller");
+      Vendor apple = new Vendor("apple", "Technology enterprise");
+      Vendor result = Vendor.Find(2);
+
+      Assert.AreEqual(apple, result);
+    }
   }
 }
