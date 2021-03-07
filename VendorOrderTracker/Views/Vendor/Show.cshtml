@@ -3,11 +3,12 @@
   Layout = "_Layout";
 }
 
-<h1>@Model.Name</h1>
-<h6>@Model.Description</h6>
-<h3>Current Available Order(s): @Model.Orders.Count</h3>
+<h1>Vendor: @Model["Vendor"].Name</h1>
+<h5>Description:</h5>
+<h6>@Model["Vendor"].Description</h6>
 
-<a href="/vendor/@Model.Id/order/delete" class="btn btn-warning">Delete Current Vendor</a>
-<a href="/vendor" class="btn btn-primary">View All Vendors</a>
-<a href="/vendor/@Model.Id/order/new" class="btn btn-success">Add a new Order</a>
-<a href="/vendor/@Model.Id/order/delete_all" class="btn btn-danger">Delete All Orders</a>
+
+<a href='/vendor/@Model["Vendor"].Id/order/delete' class="btn btn-warning">Delete Current Vendor</a>
+<a href='/vendor' class="btn btn-primary">View All Vendors</a>
+<a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add a new Order</a>
+<a href='/vendor/@Model["Vendor"].Id/order/delete_all' class="btn btn-danger">Delete All Orders</a>
