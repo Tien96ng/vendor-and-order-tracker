@@ -36,11 +36,10 @@ namespace VendorOrderTracker.Models
 
     public static void Delete(int id)
     {
+      Vendor removeVendor = Vendor.Find(id);
+      _instances.Remove(removeVendor);
       for(int i = 0; i < _instances.Count; i++)
       {
-        if(id == _instances[i].Id){
-          _instances.Remove(_instances[i]);
-        }
         _instances[i].Id = i + 1;
       }
     }

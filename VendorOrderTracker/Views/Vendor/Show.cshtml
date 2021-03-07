@@ -8,7 +8,10 @@
 <h6>@Model["Vendor"].Description</h6>
 
 
-<a href='/vendor/@Model["Vendor"].Id/order/delete' class="btn btn-warning">Delete Current Vendor</a>
+<form action="/vendor/delete" method="POST">
+  <input type="hidden" value='@Model["Vendor"].Id' name="id">
+  <button type="submit" class="btn btn-warning">Delete Current Vendor</button>
+</form>
 <a href='/vendor' class="btn btn-primary">View All Vendors</a>
 <a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add a new Order</a>
 <a href='/vendor/@Model["Vendor"].Id/order/delete_all' class="btn btn-danger">Delete All Orders</a>
