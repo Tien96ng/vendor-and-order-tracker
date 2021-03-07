@@ -19,5 +19,12 @@ namespace VendorOrderTracker.Tests
       Order newOrder = new Order("controllers", "PS5 Controller order", 5500);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+
+    [TestMethod]
+    public void GetName_ReturnsName_String()
+    {
+      Order newOrder = new Order("controllers", "PS5 Controller order", 5500);
+      Assert.AreEqual("controllers", newOrder.Name);
+    }
   }
 }
