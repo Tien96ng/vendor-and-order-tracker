@@ -1,17 +1,20 @@
-@using VendorOrderTracker.Models;
 @{
   Layout = "_Layout";
 }
 
-<form action="/vendor/@Model.Id/order" action="POST">
+<h1>Add a new item to @Model.Name</h1>
+
+<form action="/vendor/@Model.Id/order" method="post">
+  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+
   <label for="name">Name:</label>
-  <input type="text" name="name" id="name" required>
+  <input id="name" name="name" type="text" required>
 
   <label for="description">Description:</label>
-  <textarea id="description" name="description" rows="3" required></textarea>
-  
-  <label for="price">Price:</label>
-  <input type="number" name="price" id="price" required>
+  <textarea id="description" name="description" required rows="3"></textarea>
 
-  <button type="submit" class="btn btn-success submit-btn">Add New Order</button> 
+  <label for="price">Price:</label>
+  <input type="number" id="price" name="price" required>
+
+  <button type="submit" class="btn btn-success submit-btn">Add Order</button>
 </form>

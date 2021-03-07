@@ -33,7 +33,7 @@ namespace VendorOrderTracker.Controllers
         return RedirectToAction("Index");
       }
 
-      [HttpGet("/vendor/{id}/order")]
+      [HttpGet("/vendor/{id}")]
       public ActionResult Show(int id)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
@@ -49,6 +49,21 @@ namespace VendorOrderTracker.Controllers
       {
         Vendor.Delete(id);
         return RedirectToAction("Index");
+      }
+
+      [HttpPost("/vendor/{vendorId}/order")]
+      public ActionResult Create(int vendorId, string name, string description, int price)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+
+        Vendor selectedVendor = Vendor.Find(vendorId);
+        Order newOrder = new Order(name, description, price);
+        
+        selectedVendor.AddOrder(newOrder);
+        List<Order> vendorOrders = selectedVendor.Orders;
+        model.Add("Orders", vendorOrders);
+        model.Add("Vendor", selectedVendor);
+        return View("Show", model);
       }
     }
 }

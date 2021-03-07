@@ -12,7 +12,5 @@ namespace VendorOrderTracker.Controllers
       Vendor selectedVendor = Vendor.Find(vendorId);
       return View(selectedVendor);
     }
-
-
   }
 }
