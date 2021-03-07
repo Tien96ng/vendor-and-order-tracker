@@ -33,7 +33,7 @@ namespace VendorOrderTracker.Controllers
         return RedirectToAction("Index");
       }
 
-      [HttpGet("/vendor/{id}")]
+      [HttpGet("/vendor/{id}/order")]
       public ActionResult Show(int id)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
