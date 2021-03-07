@@ -32,5 +32,12 @@ namespace VendorOrderTracker.Controllers
         Vendor.ClearAll();
         return RedirectToAction("Index");
       }
+
+      [HttpGet("/vendor/{id}")]
+      public ActionResult Show(int id)
+      {
+        Vendor selectedVendor = Vendor.Find(id);
+        return View(selectedVendor);
+      }
     }
 }
