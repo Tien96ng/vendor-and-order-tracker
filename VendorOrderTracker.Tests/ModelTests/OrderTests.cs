@@ -33,5 +33,12 @@ namespace VendorOrderTracker.Tests
       Order newOrder = new Order("pastic can", "Pastic cans to put sode in", 5);
       Assert.AreEqual("Pastic cans to put sode in", newOrder.Description);
     }
+
+    [TestMethod]
+    public void GetPrice_ReturnsPrice_Int()
+    {
+      Order newOrder = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Assert.AreEqual(5, newOrder.Price);
+    }
   }
 }
