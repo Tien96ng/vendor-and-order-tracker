@@ -20,7 +20,14 @@ namespace VendorOrderTracker.Models
       Name = name;
       Description = description;
       Price = price;
-      Date = DateTime.Now.ToString();
+      Date = DateTime.Now.ToString().Substring(0, 8);
+      _instances.Add(this);
+      Id = _instances.Count;
+    }
+
+    public static void ClearAll()
+    {
+      _instances.Clear();
     }
   }
 }
