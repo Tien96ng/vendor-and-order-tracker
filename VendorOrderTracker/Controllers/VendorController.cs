@@ -1,7 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using VendorOrderTracker.Models;
-using System;
 
 namespace VendorOrderTracker.Controllers
 {
@@ -73,6 +72,19 @@ namespace VendorOrderTracker.Controllers
         Dictionary<string, object> model = new Dictionary<string, object>();
         Vendor selectedVendor = Vendor.Find(vendorId);
         selectedVendor.Orders.Clear();
+        List<Order> vendorOrders = selectedVendor.Orders;
+        model.Add("Vendor", selectedVendor);
+        model.Add("Orders", vendorOrders);
+        return View("Show", model);
+      }
+
+      [HttpPost("/vendor/{vendorId}/order/delete")]
+      public ActionResult Delete(int vendorId, int orderId)
+      {
+        Dictionary<string, object> model = new Dictionary<string, object>();
+        Vendor selectedVendor = Vendor.Find(vendorId);
+        // Order orderToDelete = Order.Find(orderId);
+        selectedVendor.Orders.RemoveAt(orderId - 1);
         List<Order> vendorOrders = selectedVendor.Orders;
         model.Add("Vendor", selectedVendor);
         model.Add("Orders", vendorOrders);

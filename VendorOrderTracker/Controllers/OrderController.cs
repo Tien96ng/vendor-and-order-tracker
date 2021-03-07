@@ -23,6 +23,5 @@ namespace VendorOrderTracker.Controllers
       model.Add("Vendor", vendor);
       return View(model);
     }
-
   }
 }
