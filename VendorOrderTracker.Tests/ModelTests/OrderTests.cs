@@ -10,7 +10,7 @@ namespace VendorOrderTracker.Tests
   {
     public void Dispose()
     {
-      //
+      Order.ClearAll();
     }
 
     [TestMethod]
@@ -39,6 +39,15 @@ namespace VendorOrderTracker.Tests
     {
       Order newOrder = new Order("pastic can", "Pastic cans to put sode in", 5);
       Assert.AreEqual(5, newOrder.Price);
+    }
+
+    [TestMethod]
+    public void GetId_ReturnsId_Int()
+    {
+      Order newOrder1 = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Order newOrder2 = new Order("toliet paper", "bath necessity", 5);
+      Console.WriteLine(newOrder1.Id);
+      Assert.AreEqual(1, newOrder1.Id);
     }
   }
 }
