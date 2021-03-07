@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model["Vendor"].Name order details: </h1>
+<h4>@Model["Order"].Name</h4>
+<h4>@Model["Order"].Description</h4>
+<h4>@Model["Order"].Date</h4>
+
+<a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add another Order</a>
+<a href='/vendor' class="btn btn-primary">View all categories</a>
+<form action='/vendor/@Model["Vendor"].Id/order' method="POST">
+  <input type="hidden" name="vendorId" value='@Model["Vendor"].Id'>
+  <input type="hidden" name="orderId" value='@Model["Order"].Id'>
+  <button type="submit" class="btn btn-danger">Delete current Order</button>
+</form>
+

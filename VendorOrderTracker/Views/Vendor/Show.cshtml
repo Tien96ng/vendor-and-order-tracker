@@ -8,12 +8,21 @@
 <h6>@Model["Vendor"].Description</h6>
 
 <h6>Current Available Orders: @Model["Orders"].Count</h6>
-<ol>
-@foreach (Order order in @Model["Orders"])
+@if(@Model["Orders"].Count == 0)
 {
-  <li><a href='/vendor/@Model["Vendor"].Id/order/@order.Id'>@order.Name</a></li>
+  <h5>No Current Orders</h5>
 }
-</ol>
+
+@if(@Model["Orders"].Count > 0)
+{
+  <ol>
+    @foreach (Order order in @Model["Orders"])
+    {
+      <li><a href='/vendor/@Model["Vendor"].Id/order/@order.Id'>@order.Name</a></li>
+    }
+  </ol>
+}
+
 
 
 <form action="/vendor/delete" method="POST">
@@ -22,4 +31,8 @@
 </form>
 <a href='/vendor' class="btn btn-primary">View All Vendors</a>
 <a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add a new Order</a>
-<a href='/vendor/@Model["Vendor"].Id/order/delete_all' class="btn btn-danger">Delete All Orders</a>
+
+<form action='/vendor/@Model["Vendor"].Id/delete_all_orders' method="POST">
+  <input type="hidden" value='@Model["Vendor"].Id' name="id">
+  <button type="submit" class="btn btn-danger">Delete All Orders</button>
+</form>

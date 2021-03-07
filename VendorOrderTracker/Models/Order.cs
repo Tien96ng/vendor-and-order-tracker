@@ -6,8 +6,6 @@ namespace VendorOrderTracker.Models
 {
   public class Order
   {
-    // Create an Order class. This class should include properties for the title, the description, the price, the date, and 
-    // any other properties you would like to include.
     public string Name { get; }
     public string Description { get; }
     public string Date { get; }

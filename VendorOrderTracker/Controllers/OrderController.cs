@@ -12,5 +12,17 @@ namespace VendorOrderTracker.Controllers
       Vendor selectedVendor = Vendor.Find(vendorId);
       return View(selectedVendor);
     }
+
+    [HttpGet("/vendor/{vendorId}/order/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
+    {
+      Order order = Order.Find(orderId);
+      Vendor vendor = Vendor.Find(vendorId);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      model.Add("Order", order);
+      model.Add("Vendor", vendor);
+      return View(model);
+    }
+
   }
 }
