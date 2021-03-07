@@ -34,12 +34,20 @@ namespace VendorOrderTracker.Models
     {
       return _instances;
     }
-
+    
     public static Order Find(int id)
     {
       return _instances[id - 1];
     }
-
-
+    public static void Delete(int id)
+    {
+      for(int i = 0; i < _instances.Count; i++)
+      {
+        if(id == _instances[i].Id){
+          _instances.Remove(_instances[i]);
+        }
+        _instances[i].Id = i + 1;
+      }
+    }
   }
 }
