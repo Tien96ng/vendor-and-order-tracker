@@ -49,5 +49,42 @@ namespace VendorOrderTracker.Tests
       Console.WriteLine(newOrder1.Id);
       Assert.AreEqual(1, newOrder1.Id);
     }
+
+    [TestMethod]
+    public void GetDate_ReturnsDateOfOrder_String()
+    {
+      Order newOrder = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Assert.AreEqual("3/6/2021", newOrder.Date);
+    }
+
+    [TestMethod]
+    public void GetAll__ReturnAllObjectsInList_List()
+    {
+      Order newOrder1 = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Order newOrder2 = new Order("toliet paper", "bath necessity", 5);
+
+      List<Order> result = new List<Order> { newOrder1, newOrder2 };
+      CollectionAssert.AreEqual(result, Order.GetAll());
+    }
+
+    [TestMethod]
+    public void Find_ReturnSpecificObjectInList_List()
+    {
+      Order newOrder1 = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Order newOrder2 = new Order("toliet paper", "bath necessity", 5);
+
+      Assert.AreEqual(newOrder2, Order.Find(2));
+    }
+
+    [TestMethod]
+    public void Delete_RemovesSpecificObjectInList_List()
+    {
+      Order newOrder1 = new Order("pastic can", "Pastic cans to put sode in", 5);
+      Order newOrder2 = new Order("toliet paper", "bath necessity", 5);
+      Order.Delete(1);
+      List<Order> orderList = Order.GetAll();
+
+      Assert.AreEqual(newOrder2, orderList[0]);
+    }
   }
 }

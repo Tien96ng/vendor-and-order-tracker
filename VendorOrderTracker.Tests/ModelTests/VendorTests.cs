@@ -75,5 +75,13 @@ namespace VendorOrderTracker.Tests
     }
 
     // Test Method for AddOrder
+    [TestMethod]
+    public void AddOrder_AddOrderToOrdersListForVendors_List()
+    {
+      Vendor burgerKing = new Vendor("burger king", "Fast Food");
+      Order newOrder = new Order("toliet paper", "bath necessity", 5);
+      burgerKing.AddOrder(newOrder);
+      Assert.AreEqual(1, burgerKing.Orders.Count);
+    }
   }
 }
