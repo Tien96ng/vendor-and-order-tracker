@@ -4,17 +4,26 @@
 
 <h1>Add a new item to @Model.Name</h1>
 
-<form action="/vendor/@Model.Id/order" method="post">
-  <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
 
-  <label for="name">Name:</label>
-  <input id="name" name="name" type="text" required>
 
-  <label for="description">Description:</label>
-  <textarea id="description" name="description" required rows="3"></textarea>
+<div class="form-container">
+  <form action="/vendor/@Model.Id/order" method="post">
+    <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
 
-  <label for="price">Price:</label>
-  <input type="number" id="price" name="price" required>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input id="name" name="name" type="text" required class="form-control">
+    </div>
 
-  <button type="submit" class="btn btn-success submit-btn">Add Order</button>
-</form>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea id="description" name="description" required rows="3" class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="number" id="price" name="price" required class="form-control">
+    </div>
+    
+    <button type="submit" class="btn btn-success submit-btn">Add Order</button>
+  </form>
+</div>

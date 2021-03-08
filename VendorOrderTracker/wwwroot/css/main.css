@@ -31,7 +31,7 @@ body {
 .boxfather{
   width:100%;
 }
-.box h1, h3{
+.box h1, h3, .description{
   color: #E4E4E4;
   font-size: 5em;
   text-align: center;
@@ -45,7 +45,7 @@ body {
 }
 
 .box .view-btn{
-  left:43%;
+  left:40%;
   position:relative;
   top:120px;
   padding: 8px 20px;
@@ -78,3 +78,43 @@ h5{
   float: right;
   padding-right: 80px;
 }
+
+.btn {
+  margin: 10px;
+}
+
+li, label{
+  font-size: 1.5em;
+  color: black;
+}
+
+li a{
+  color: antiquewhite;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.form-group, .submit-btn{
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+.form-container{
+  font-family: "Gill Sans", sans-serif;
+  padding-top: 3.5em;
+}
+
+.description{
+  font-size: 20px;
+  font-style: italic;
+}
+ 
+
+.order-list{
+  color: black;
+}
+
+.order-details{
+  color: yellow;
+}
+

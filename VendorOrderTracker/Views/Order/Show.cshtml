@@ -3,15 +3,26 @@
 }
 
 <h1>@Model["Vendor"].Name order details: </h1>
-<h4>@Model["Order"].Name</h4>
-<h4>@Model["Order"].Description</h4>
-<h4>@Model["Order"].Date</h4>
+<div class="list-container">
+  <ul class="order-list">
+    <li>Order: <span class="order-details">@Model["Order"].Name</span></li>
+    <li>Order Price: <span class="order-details">$@Model["Order"].Price</span></li>
+    <li>Description of Order: <br/> <span class="order-details">@Model["Order"].Description</span></li>
+    <li>Date Order Placed: <span class="order-details">@Model["Order"].Date</span></li>
+  </ul>
+</div>
 
-<a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add another Order</a>
-<a href='/vendor' class="btn btn-primary">View all categories</a>
-<form action='/vendor/@Model["Vendor"].Id/order/delete' method="POST">
-  <input type="hidden" name="vendorId" value='@Model["Vendor"].Id'>
-  <input type="hidden" name="orderId" value='@Model["Order"].Id'>
-  <button type="submit" class="btn btn-danger">Delete current Order</button>
-</form>
+<div class="action-container">
+  <a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add another Order</a>
+  <br />
+  <a href='/vendor' class="btn btn-primary">View all Vendors</a>
+  <br />
+  <a href='/vendor/@Model["Vendor"].Id' class="btn btn-info">View all @Model["Vendor"].Name Orders</a>
+  <form action='/vendor/@Model["Vendor"].Id/order/delete' method="POST">
+    <input type="hidden" name="vendorId" value='@Model["Vendor"].Id'>
+    <input type="hidden" name="orderId" value='@Model["Order"].Id'>
+    <button type="submit" class="btn btn-danger">Delete current Order</button>
+  </form>
+
+</div>
 
