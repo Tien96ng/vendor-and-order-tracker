@@ -23,7 +23,7 @@ _A MVC web application for "Pierre's Bakery" is used a tracking platform. The pl
   \
   **2.** _Open the file and follow the steps provided by the installer for your OS_.\
   \
-  **3.** _Confirm the installation is successful by opening a new Windows PowerShell OR Max Terminal window and running the command dotnet --version_.\
+  **3.** _Confirm the installation is successful by opening a new Windows PowerShell OR Max Terminal window and running the command dotnet --version_.
 
 ### Local Environment Setup
 1. _Clone the repo or download the ZIP file of the repo._
