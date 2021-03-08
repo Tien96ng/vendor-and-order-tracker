@@ -29,10 +29,12 @@ _A MVC web application for "Pierre's Bakery" is used a tracking platform. The pl
 1. _Clone the repo or download the ZIP file of the repo._
 2. _Navigate to the main directory of the repo._
 3. _Open the repo's main directory in the Code Editor of your choice._
-5. _Run the **FIRST** command in your terminal within the repo's main directory (Example: /VendorOrderTracker/): __"dotnet build"__._
-6. _Run the **SECOND** command in your terminal within the same main directory (Example: /VendorOrderTracker/): __"dotnet run"__._
-7. _The App should now be running in your console._
-8. _To stop the app during any moment, press the following combination of keys: _**CTRL**_ + _**C**_._
+4. _Run the **FIRST** command in your terminal within the repo's main directory (Example: /VendorOrderTracker/): __"dotnet restore"__._
+5. _Run the **SECOND** command in your terminal within the repo's main directory (Example: /VendorOrderTracker/): __"dotnet build"__._
+6. _Run the **THIRD** command in your terminal within the same main directory (Example: /VendorOrderTracker/): __"dotnet run"__._
+7. _The App should now be running Localhost:5000._
+8. _Open any web browser app and go to **http://localhost:5000/** to open your app._
+8. _To stop the app during any moment, press the following combination of keys in your terminal: _**CTRL**_ + _**C**_._
 
 ### Using TDD with MSTest
 1. _Clone the repo or download the ZIP file of the repo._
