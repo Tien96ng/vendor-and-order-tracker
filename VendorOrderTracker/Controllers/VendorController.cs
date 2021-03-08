@@ -83,7 +83,8 @@ namespace VendorOrderTracker.Controllers
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
         Vendor selectedVendor = Vendor.Find(vendorId);
-        selectedVendor.Orders.RemoveAt(orderId - 1);
+        Order orderToDelete = Order.Find(orderId);
+        selectedVendor.Orders.Remove(orderToDelete);
         List<Order> vendorOrders = selectedVendor.Orders;
         model.Add("Vendor", selectedVendor);
         model.Add("Orders", vendorOrders);
