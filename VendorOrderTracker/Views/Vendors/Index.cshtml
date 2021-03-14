@@ -15,14 +15,14 @@
   @foreach (Vendor vendor in Model)
   {
     <li>
-      <a href="/vendor/@vendor.Id">@vendor.Name</a>
+      <a href="/vendors/@vendor.Id">@vendor.Name</a>
     </li>
   }
 </div>
 
 <div class="action-container">
-  <a href="/vendor/new" class="btn btn-success">Add Vendor</a>
-  <form action="/vendor/delete_all" method="post">
+  <a href="/vendors/new" class="btn btn-success">Add Vendor</a>
+  <form action="/vendors/delete_all" method="post">
     <button type="submit" class="btn btn-danger">Delete All Vendors</button>
   </form>
 </div>

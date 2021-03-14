@@ -21,7 +21,7 @@
     <ol>
       @foreach (Order order in @Model["Orders"])
       {
-        <li><a href='/vendor/@Model["Vendor"].Id/order/@order.Id'>@order.Name</a></li>
+        <li><a href='/vendors/@Model["Vendor"].Id/orders/@order.Id'>@order.Name</a></li>
       }
     </ol>
   }
@@ -29,15 +29,15 @@
 
 <div class="action-container">
   
-  <a href='/vendor' class="btn btn-primary">View All Vendors</a>
+  <a href='/vendors' class="btn btn-primary">View All Vendors</a>
   <br />
-  <a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add a new Order</a>
+  <a href='/vendors/@Model["Vendor"].Id/orders/new' class="btn btn-success">Add a new Order</a>
 
-  <form action='/vendor/@Model["Vendor"].Id/delete_all_orders' method="POST">
+  <form action='/vendors/@Model["Vendor"].Id/delete_all_orders' method="POST">
     <input type="hidden" value='@Model["Vendor"].Id' name="id">
     <button type="submit" class="btn btn-danger">Delete All Orders</button>
   </form>
-  <form action="/vendor/delete" method="POST">
+  <form action="/vendors/delete" method="POST">
     <input type="hidden" value='@Model["Vendor"].Id' name="id">
     <button type="submit" class="btn btn-warning">Delete Current Vendor</button>
   </form>

@@ -13,12 +13,12 @@
 </div>
 
 <div class="action-container">
-  <a href='/vendor/@Model["Vendor"].Id/order/new' class="btn btn-success">Add another Order</a>
+  <a href='/vendors/@Model["Vendor"].Id/orders/new' class="btn btn-success">Add another Order</a>
   <br />
-  <a href='/vendor' class="btn btn-primary">View all Vendors</a>
+  <a href='/vendors' class="btn btn-primary">View all Vendors</a>
   <br />
-  <a href='/vendor/@Model["Vendor"].Id' class="btn btn-info">View all @Model["Vendor"].Name Orders</a>
-  <form action='/vendor/@Model["Vendor"].Id/order/delete' method="POST">
+  <a href='/vendors/@Model["Vendor"].Id' class="btn btn-info">View all @Model["Vendor"].Name Orders</a>
+  <form action='/vendors/@Model["Vendor"].Id/orders/delete' method="POST">
     <input type="hidden" name="vendorId" value='@Model["Vendor"].Id'>
     <input type="hidden" name="orderId" value='@Model["Order"].Id'>
     <button type="submit" class="btn btn-danger">Delete current Order</button>

@@ -4,36 +4,36 @@ using VendorOrderTracker.Models;
 
 namespace VendorOrderTracker.Controllers
 {
-    public class VendorController : Controller
+    public class VendorsController : Controller
     {
-      [HttpGet("/vendor")]
+      [HttpGet("/vendors")]
       public ActionResult Index()
       {
         List<Vendor> allVendors = Vendor.GetAll();
         return View(allVendors);
       }
       
-      [HttpGet("/vendor/new")]
+      [HttpGet("/vendors/new")]
       public ActionResult New()
       {
         return View();
       }
 
-      [HttpPost("/vendor")]
+      [HttpPost("/vendors")]
       public ActionResult Create(string name, string description)
       { 
         Vendor newVendor = new Vendor(name, description);
         return RedirectToAction("Index");
       }
 
-      [HttpPost("/vendor/delete_all")]
+      [HttpPost("/vendors/delete_all")]
       public ActionResult DeleteAll()
       {
         Vendor.ClearAll();
         return RedirectToAction("Index");
       }
 
-      [HttpGet("/vendor/{id}")]
+      [HttpGet("/vendors/{id}")]
       public ActionResult Show(int id)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
@@ -44,14 +44,14 @@ namespace VendorOrderTracker.Controllers
         return View(model);
       }
 
-      [HttpPost("/vendor/delete")]
+      [HttpPost("/vendors/delete")]
       public ActionResult Delete(int id)
       {
         Vendor.Delete(id);
         return RedirectToAction("Index");
       }
 
-      [HttpPost("/vendor/{vendorId}/order")]
+      [HttpPost("/vendors/{vendorId}/order")]
       public ActionResult Create(int vendorId, string name, string description, int price)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
@@ -66,7 +66,7 @@ namespace VendorOrderTracker.Controllers
         return View("Show", model);
       }
 
-      [HttpPost("/vendor/{vendorId}/delete_all_orders")]
+      [HttpPost("/vendors/{vendorId}/delete_all_orders")]
       public ActionResult DeleteAllOrders(int vendorId)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
@@ -78,7 +78,7 @@ namespace VendorOrderTracker.Controllers
         return View("Show", model);
       }
 
-      [HttpPost("/vendor/{vendorId}/order/delete")]
+      [HttpPost("/vendors/{vendorId}/order/delete")]
       public ActionResult Delete(int vendorId, int orderId)
       {
         Dictionary<string, object> model = new Dictionary<string, object>();
