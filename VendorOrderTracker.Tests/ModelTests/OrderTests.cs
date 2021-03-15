@@ -54,7 +54,8 @@ namespace VendorOrderTracker.Tests
     public void GetDate_ReturnsDateOfOrder_String()
     {
       Order newOrder = new Order("pastic can", "Pastic cans to put sode in", 5);
-      Assert.AreEqual("3/6/2021", newOrder.Date);
+      string currentDate = DateTime.Now.ToString().Substring(0, 8);
+      Assert.AreEqual(currentDate, newOrder.Date);
     }
 
     [TestMethod]
